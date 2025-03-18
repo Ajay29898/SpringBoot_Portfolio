@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+    <h2> Login Here </h2>
+    
+    <div th:if = "${errorMsg}">
+       <h3 style="color:red;" th:text="${errorMsg}"></h3>
+    </div>
+    
+    <form th:action = "@{/loginForm}" th:object = "${std}" method="post">
+        Email Id : <input type = "text" th:field="*{email}" /> <br/> <br/>
+        Password : <input type = "password" th:field="*{password}" /> <br/> <br/>
+        <input type = "submit" value="Login" />
+    </form>
+    
+    <br/><br/>
+    
+    <a href = "index.html">Home</a>     <!--  we can write index.html directly here because it is a static page -->
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    
+    <a href = "regPage">Register</a>
+</body>
+</html>
